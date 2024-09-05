@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+class bill{
+    public:
+    int units;
+    float total;
+    string s;
+
+void set(){
+    cout<<"enter the name:";
+    getline(cin,s);
+    cout<<"enter the units:";
+    cin>>units;
+}
+void cal(){
+    if(units<=100){
+        total=units*0.60;
+    }
+    else if(units<=300){
+        total=100*0.60+(units-100)*0.80;
+    }
+    else{
+        total=100*0.60+200*0.80+(units-300)*0.90;
+    }
+}
+void show(){
+    if(units<300){
+        total=total+50;
+        total=total+(15.0/100.0)*total;
+        cout<<total<<" ";
+         cout<<"name is"<<" "<<s;
+    }
+    else{
+    
+        cout<<total<<" ";
+         cout<<"name is"<<" "<<s;
+    }
+}
+};
+int main(){
+    bill d;
+    d.set();
+    d.cal();
+    d.show();
+    
+}
