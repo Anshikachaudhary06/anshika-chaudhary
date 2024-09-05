@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+class user
+{
+      private:
+      int a,b;
+      public:
+      void value()
+      {
+        cout<<"enter the value of a"<<endl;
+        cin>>a;
+        cout<<"enter the value of b"<endl;
+        cin>>b;
+      }
+      void display()
+      {
+        cout<<"value of ais="<<a<<endl;
+        cout<<"value  of b is="<<b<<endl;
+      }
+};
+
+ int main()
+ {
+    user d1;
+    d1.value();
+    d1.display();
+ }
