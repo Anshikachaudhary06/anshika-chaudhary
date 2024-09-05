@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+int main(){
+    string s;
+    int i,j=0,f=0,l=0;
+    cout<<"enter the string:";
+    getline(cin,s);
+    for(i=0;s[i]!='\0';i++){
+        l++;
+    }
+    
+    for(i=0;i<l/2;i++)
+    {
+        j++;
+    
+        if(s[i]!=s[l-j]){
+            f++;
+        }
+        else{
+          f=1;
+        }
+    }
+
+    
+    if(f==1){
+      cout<<"palindrome";
+    }
+    else{
+        cout<<"not palindrome";
+    }
+    return 0;
+
+}
