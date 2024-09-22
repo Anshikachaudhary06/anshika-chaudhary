@@ -1,0 +1,51 @@
+#include<iostream>
+using namespace std;
+class student{
+       public:
+      int scores[5];
+
+      void input();
+      int calculateTotalscore();
+
+};
+void stude#nt::input(){
+cout<<"enter the scores of 5 subjects\n";
+        for(int i=0;i<5;i++)
+        {
+            cin>>scores[i];
+        }
+}
+int student::calculateTotalscore(){
+ int sum=0;
+            //cout<<"total sum="<<endl;
+            for(int i=0;i<5;i++)
+            {
+                 sum=sum+scores[i];
+            }
+            return  sum;
+        } 
+int main(){
+    student d1[50];
+    int n,c=0;
+    cout<<"enter the number of students:";
+    cin>>n;
+    for(int i=0;i<n;i++){
+       d1[i].input();
+    }
+    for(int i=0;i<n;i++){
+     d1[i].calculateTotalscore();
+    }
+    for(int i=0;i<n;i++){
+        if(d1[0].calculateTotalscore()<d1[i].calculateTotalscore()){
+        c++;
+    }
+    }
+    if(c==0){
+        cout<<"no one has higher score than anna";
+    }
+    else{
+    cout<<"total number of student who have higher marks than anna"<<c;
+    }
+    return 0;
+     
+}
