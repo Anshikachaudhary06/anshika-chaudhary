@@ -1,0 +1,59 @@
+#include<iostream>
+using namespace std;
+class info{
+    private:
+    string name;
+    int accnumber;
+    string acctype;
+    float balanceamount;
+    public:
+    void input(){
+        char c;
+         cout<<"enter the name";
+         getline(cin,name);
+         cout<<"account number";
+         cin>>accnumber;
+         cin.ignore();
+         cout<<"account type";
+         getline(cin,acctype);
+        
+         cout<<"balance in account";
+         cin>>balanceamount;
+         cout<<"do you want to withdraw";
+         cin>>c;
+         if(c=='y'){
+            withdraw();
+         }
+          else if(c=='n')
+          {
+            char k;
+            cout<<"do you want to deposit";
+            cin>>k;
+            if(k=='y'){
+                deposite();
+            }
+          }
+    }
+    void deposite(){
+        int deposite;
+        cout<<"enter the deposit amount";
+        cin>>deposite;
+        balanceamount=balanceamount+deposite;
+    }
+    void withdraw(){
+        int withdraw;
+        cout<<"enter the withdraw amount:";
+        cin>>withdraw;
+        balanceamount=balanceamount-withdraw;
+    }
+    void display(){
+        cout<<balanceamount;
+        cout<<name;
+    }
+};
+int main(){
+    info d1;
+    d1.input();
+    d1.display();
+    return 0;
+}
