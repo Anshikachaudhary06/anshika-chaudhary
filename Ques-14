@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+class complex{
+    private:
+    int real;
+    int img;
+     
+    public:
+    complex(){}
+    complex(int real,int img){
+        this->real=real;
+        this->img=img;
+    }
+   /* complex operator +(complex dd){
+        complex d4;
+        d4.real=real+dd.real;
+        d4.img=img+dd.img;
+        return d4;
+    }*/
+   friend complex operator +(complex,complex);
+    void show(){
+        cout<<real<<"\t"<<img<<endl;
+    }
+    ~complex(){}
+};
+   complex operator +(complex d1,complex d2){
+           complex dd;
+           dd.real=d1.real+d2.real;
+           dd.img=d1.img+d2.img;
+           return dd;
+   }
+    
+int main(){
+    complex d1(5,6);
+    complex d2(5,4);
+    complex d3=d1+d2;
+    d3.show();
+    return 0;
+}
+
