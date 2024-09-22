@@ -1,0 +1,54 @@
+#include<iostream>
+using namespace std;
+class overloading{
+     int x,y;
+     public:
+     overloading(){}
+     overloading(int x,int y){
+        this->x=x;
+        this->y=y;
+     }
+     friend overloading operator-(overloading,overloading);
+     friend overloading operator--(overloading&);
+     friend overloading operator--(overloading&,int);
+     void show(){
+        cout<<x<<"\t"<<y<<endl;
+     }
+     ~overloading(){}
+};
+overloading operator-(overloading d1,overloading d2){
+    overloading dd;
+    dd.x=d1.x-d2.x;
+    dd.y=d1.y-d2.y;
+    return dd;
+}
+overloading operator--(overloading &d){
+   --(d.x);
+  --(d.y);
+  return d;
+}
+overloading operator--(overloading &d1,int   ){
+    (d1.x)--;
+     (d1.y)--;
+     return d1;
+
+}
+int main(){
+    overloading d1(5,6);
+    overloading d2(5,4);
+    overloading d3;
+    cout<<"simple:\n";
+    d3=d1-d2;
+    d3.show();
+    cout<<"predecrement:\n";
+    --d1;
+    --d2;
+    d1.show();
+    d2.show();
+    cout<<"postdecrement:\n";
+    d1--;
+    d2--;
+    d1.show();
+    d2.show();
+    return 0;
+ }
