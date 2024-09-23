@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+class cal{
+public:
+int area(int l, int b){
+    cout << "area of rectangle = " << l * b << endl;
+    return l*b;
+}
+
+int  area(int s){
+    cout << "area of square = " << s * s << endl;  
+    return s*s;
+}
+
+int area(float e, float h){
+    cout << "area of triangle = " << 0.5 * e * h << endl;
+    return 0.5*e*h;
+}
+};
+
+int main(){
+    cal d1;
+    int l,b,s;
+    float e,h;
+    printf("enter the length and breadth of rectangle:");
+    scanf("%d%d",&l,&b);
+    d1.area(l,b);
+    printf("enter the side of square:");
+    scanf("%d",&s);
+    d1.area(s);
+    printf("enter the base and hight of triangle:");
+    scanf("%f%f",&e,&h);
+    d1.area(e,h);
+    return 0;
+}
